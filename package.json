@@ -1,0 +1,33 @@
+{
+  "name": "deckard",
+  "version": "1.0.0",
+  "description": "A Discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "start": "bash ./scripts/start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrprim/deckard.git"
+  },
+  "author": "Sergio Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrprim/deckard/issues"
+  },
+  "homepage": "https://github.com/mrprim/deckard#readme",
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "discord.js": "^12.5.3",
+    "fabric": "^4.5.0",
+    "regenerator-runtime": "^0.13.7",
+    "validate-color": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/runtime": "^7.10.2"
+  }
+}

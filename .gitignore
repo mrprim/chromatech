@@ -1,3 +1,7 @@
+storage
+secrets
+build
+
 # Logs
 logs
 *.log

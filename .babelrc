@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": true
+        }
+      }
+    ]
+  ],
+  "compact": true,
+  "minified": true,
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
+}
