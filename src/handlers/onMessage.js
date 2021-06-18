@@ -3,7 +3,7 @@ import * as commands from '../commands'
 import svgToFile from '../utils/svgToFile'
 import Vibrant from 'node-vibrant'
 
-const PREFIX = 'f'
+const PREFIX = 'g'
 
 
 const getArgs = msg => {

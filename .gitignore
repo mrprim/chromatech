@@ -1,6 +1,7 @@
 storage
 secrets
 build
+scripts/deploy.sh
 
 # Logs
 logs
