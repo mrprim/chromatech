@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "bash ./scripts/start.sh",
+    "build": "bash ./scripts/build.sh",
     "deploy": "bash ./scripts/deploy.sh"
   },
   "repository": {

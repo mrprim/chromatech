@@ -1,4 +1,4 @@
 #!/bin/bash
 
-babel ./src -d ./build
+npm run build
 node ./build/index.js
