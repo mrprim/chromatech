@@ -11,6 +11,7 @@ import onReaction from './handlers/onReaction'
 
 const start = () => {
   const token = getSecret('token')
+  console.log('TOKEN', token)
   if (!token) {
     logger.error('FAILED_TO_START: MISSING_TOKEN')
     return
@@ -30,7 +31,7 @@ const start = () => {
 
   // client.on('guildDelete', onGuildDelete)
 
-  client.login(token)
+  client.login(token).catch(console.log)
 }
 
 start()

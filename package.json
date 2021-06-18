@@ -4,7 +4,8 @@
   "description": "A Discord bot.",
   "main": "index.js",
   "scripts": {
-    "start": "bash ./scripts/start.sh"
+    "start": "bash ./scripts/start.sh",
+    "deploy": "bash ./scripts/deploy.sh"
   },
   "repository": {
     "type": "git",
