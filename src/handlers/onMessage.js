@@ -2,22 +2,23 @@ import { Emoji, Message } from 'discord.js'
 import * as commands from '../commands'
 import svgToFile from '../utils/svgToFile'
 import Vibrant from 'node-vibrant'
+import { get } from '../data/guild'
 
-const PREFIX = 'g'
+const PREFIX = 'z'
 
 
 const getArgs = msg => {
   const args = msg.content.split(/\s+/)
-
-  if (msg.channel.type === 'dm') {
-    return args
-  }
 
   const prefix = args.shift()
   const mentionId = msg.client.user.id
 
   if ([PREFIX, `<@!${mentionId}>`, `<@${mentionId}>`].includes(prefix)) {
     return args
+  }
+
+  if (msg.channel.type === 'dm') {
+    return [prefix, ...args]
   }
 }
 
@@ -46,6 +47,7 @@ const onMessage = async msg => {
 }
 
 const onMessageWithAttachment = async msg => {
+  const guildSettings = get(msg.guild.id)
   const url = msg.attachments.find(a => a.url).url
   const palette = await Vibrant.from(url).getPalette()
   const swatches = Object.values(palette)
@@ -59,7 +61,12 @@ const onMessageWithAttachment = async msg => {
   svg += '</svg>'
 
   const file = await svgToFile(svg, { width: swatches.length * width * 3, height: 60 })
-  await msg.reply({ files: [file] })
+
+  if (guildSettings?.response === 'dm') {
+    await msg.author.send({ files: [file] })
+  } else {
+    await msg.reply({ files: [file] })
+  }
 }
 
 export default onMessage
